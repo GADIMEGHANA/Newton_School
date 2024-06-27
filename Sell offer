@@ -1,0 +1,39 @@
+Input
+The only line of input contains a string S.
+
+Constraints:
+1 ≤ S ≤ 20
+The string contains only lowercase letters
+Output
+Return the minimum cost for getting all the jewels Ram listed.
+
+//program
+
+import java.io.*; 
+import java.util.*;
+
+class Main {
+    public static void main (String[] args) {
+     
+        Scanner sc=new Scanner(System.in);
+         String s=sc.next();
+         char ch[]=s.toCharArray();
+         Map<Character,Integer> m=new HashMap<>();
+         for(int i=0;i<ch.length;i++){
+             m.put(ch[i],m.getOrDefault(ch[i],0)+1);
+         }
+         int a=0;
+         for(Map.Entry<Character,Integer> me:m.entrySet()){
+             int v=me.getValue();
+             if(v%2==0){
+                 v=v/2;
+             }
+             else{
+                 v=(v/2)+1;
+             }
+             a+=v;
+         }
+         System.out.println(a);
+
+    }
+}
