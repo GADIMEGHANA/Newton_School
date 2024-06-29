@@ -1,0 +1,31 @@
+Input
+The only line of input contains 2 space separated integers N and X denoting the size of the group of friends and the cost of one subscription.
+
+Constraints
+1 ≤ N ≤ 100
+1 ≤ X  ≤ 1000
+Output
+Return the minimum total cost that the group will incur so that everyone in the group is able to use OTT.
+
+//program
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+class Main {
+    public static void main (String[] args) {
+      
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int x=sc.nextInt();
+        int c=n%6;
+        int r=0;
+        if(c==0){
+            r=(n/6)*x;
+        }
+        else{
+            r=((n/6)+1)*x;
+        }
+       System.out.println(r);
+    }
+}
