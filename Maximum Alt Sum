@@ -1,0 +1,66 @@
+Input
+The first line of input will contain a single integer T, denoting the number of test cases.
+Each test case consists of two lines of input.
+- The first line of each test case contains a single integer N - the length of the array.
+- The second line contains N space-separated integers, denoting the array A.
+
+Constraints
+1 ≤ T ≤ 105
+1 ≤ N ≤ 2x105
+1 ≤ Ai ≤ 104
+Note: The sum of N over all test case won't exceed 2x105.
+Output
+For each test case, output on a new line the answer: the maximum possible alternating sum after rearranging A.
+
+//program
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        for(int i = 0; i < t; i++) {
+            int n = sc.nextInt(); 
+            ArrayList<Integer> l = new ArrayList<>();
+            for(int j = 0; j < n; j++) {
+                int a = sc.nextInt();
+                l.add(a);
+            }
+            ArrayList<Integer> max = new ArrayList<>();
+            ArrayList<Integer> min = new ArrayList<>();
+            
+            while (l.size() > 1) {
+                int m = Collections.max(l);
+                int mi = Collections.min(l);
+                max.add(m);
+                min.add(mi);
+                l.remove(Integer.valueOf(m));
+                l.remove(Integer.valueOf(mi));
+            }
+
+           
+            if (!l.isEmpty()) {
+                max.add(l.get(0));
+            }
+
+            int xsum = 0;
+            int nsum = 0;
+
+            
+            for (int x : max) {
+                xsum += x;
+            }
+
+            
+            for (int x : min) {
+                nsum += x;
+            }
+
+            System.out.println(xsum - nsum);
+        }
+    }
+}
