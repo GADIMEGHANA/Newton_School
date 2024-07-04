@@ -1,0 +1,48 @@
+Input
+The only line of input contains two integers A and B denoting the maximum possible number of candies Ram can eat and the maximum possible number of candies Shyam can eat respectively.
+
+Constraints:
+1 ≤ A, B ≤ 1000
+Output
+Return "Ram" if Ram wins otherwise print "Shyam".
+
+//program
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int i=1;
+        String win="";
+        while(i>0){
+            if(i%2!=0){
+                if(a>=i){
+                a=a-i;
+                win="Ram";
+                }else{
+                    win="Shyam";
+                    break;
+                }
+            }
+            else{
+                if(i%2==0){
+                    if(b>=i){
+                        b=b-i;
+                        win="Shyam";
+                    }
+                    else{
+                        win="Ram";
+                        break;
+                    }
+                }
+            }
+            i++;
+
+        }
+        System.out.println(win);
+    }
+}
