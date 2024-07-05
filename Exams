@@ -1,0 +1,36 @@
+Input
+The only line of input contains three space separated integers X, Y and Z denoting the number of schools, number of students and number of students passed the exams respectively.
+
+Constraints
+1 ≤ X ≤ 5
+1 ≤ Y ≤ 50
+0 ≤ Z ≤ X*Y
+Output
+Return "Yes" if the total number of students who passed in a city was strictly greater than 50%, otherwise return "No".
+
+//program
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        int z=sc.nextInt();
+        if(z>((x*y)/2)){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+        double e=(double)z/(x*y)*100;
+        int f=(int)e;
+        System.out.println(f);
+
+        }
+}
