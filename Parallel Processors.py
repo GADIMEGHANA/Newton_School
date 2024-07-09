@@ -5,8 +5,6 @@
 # Assign task 1 to the first processor. This means, the second processor will execute tasks 2 and 3.
 # Assign tasks 1 and 2 to the first processor. This means, the second processor will execute task 3.
 # Assign tasks 1,2 and 3 to the first processor. Thus, second processor would execute no tasks.
-
-
 def min_execution_time(N, A):
     total_time = sum(A)
     min_time = float('inf')
