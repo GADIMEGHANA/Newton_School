@@ -6,7 +6,9 @@ class IntegerBreak {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         System.out.println(integerBreak(n));
+        sc.close();
     }
+    
 
     public static int integerBreak(int n) {
         
