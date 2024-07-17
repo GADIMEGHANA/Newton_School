@@ -22,6 +22,7 @@ public class CoronaSpread {
                 count++;
                 j++;
             }
+            //java
             j = i;
             while (j - 1 >= 0 && positions[j] - positions[j - 1] <= 2) {
                 count++;
