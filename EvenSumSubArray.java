@@ -34,6 +34,7 @@ public class EvenSumSubArray {
             
             System.out.println(maxLen);
         }
+        //check
         
         scanner.close();
     }
