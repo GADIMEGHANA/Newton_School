@@ -17,6 +17,7 @@ public class Rankers {
         else if((a+b+c)<(p+q+r)){
             System.out.println("Shyam");
         }
+        //check
         else if((a+b+c) == (p+q+r)){
             if(a>p){
                 System.out.println("Ram");
