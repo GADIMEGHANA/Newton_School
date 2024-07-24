@@ -1,0 +1,55 @@
+Input
+The first line consists of a single integer T, denoting the number of test cases.
+The first line of each test case consists of two space-separated integers N and M, denoting the sizes of arrays A and B.
+The second line of each test case consists of N space separated integers, denoting an array A.
+The third line of each test case consists of M space separated integers, denoting an array B.
+Output
+For each test case, output N space-separated integers, denoting the resultant array A after all operations.
+
+//program
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int M = sc.nextInt();
+            
+            int[] A = new int[N];
+            for (int i = 0; i < N; i++) {
+                A[i] = sc.nextInt();
+            }
+            
+            int[] B = new int[M];
+            for (int i = 0; i < M; i++) {
+                B[i] = sc.nextInt();
+            }
+            
+            // Process each suffix length specified in array B
+            for (int i = 0; i < M; i++) {
+                int suffixLength = B[i];
+                
+                // Sort the suffix of length suffixLength in array A
+                sortSuffix(A, suffixLength);
+            }
+            
+            // Print the resulting array A after all operations
+            for (int i = 0; i < N; i++) {
+                System.out.print(A[i] + " ");
+            }
+            System.out.println();
+        }
+        
+        sc.close();
+    }
+    
+    // Function to sort the suffix of length k in array A
+    private static void sortSuffix(int[] A, int k) {
+        int start = A.length - k;
+        Arrays.sort(A, start, A.length);
+    }
+}
