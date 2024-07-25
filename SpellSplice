@@ -1,0 +1,45 @@
+Input
+The first line of input will contain a single integer T, denoting the number of test cases.
+Each test case consists of multiple lines of input.
+The first line of each test case contains a single integer N, the number of spells.
+The next N lines describe the spells. The ith of them contains two space-separated integers Vi and Ai - the volatility and strength of the ith spell.
+
+Output
+For each test case, output on a new line the maximum possible power of a combined spell.
+
+//program
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+       
+        for(int i=0;i<t;i++){
+             int max=0;
+            int n=sc.nextInt();
+            ArrayList<Integer> a=new ArrayList<>();
+            ArrayList<Integer> v=new ArrayList<>();
+            for(int j=0;j<n;j++){
+                a.add(sc.nextInt());
+                v.add(sc.nextInt());
+            }
+            for(int k=0;k<n;k++){
+                for(int l=k+1;l<n;l++){
+                    int m=(a.get(k)*v.get(l))+(a.get(l)*v.get(k));
+                    if(m>max){
+                        max=m;
+                    }
+                }
+            }
+            System.out.println(max);
+        }
+        
+     
+    }
+}
