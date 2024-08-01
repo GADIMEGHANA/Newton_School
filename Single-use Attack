@@ -1,0 +1,38 @@
+Input
+The first line of input will contain a single integer T, denoting the number of test cases.
+The first and only line of each test case will contain three space-separated integers H, X, Y - the parameters described in the statement.
+
+Constraints
+1 ≤ T ≤ 1000
+1 ≤ X < Y ≤ H ≤ 100
+Output
+For each test case, output on a new line the minimum number of attacks needed by Ram to win.
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++){
+            int n=sc.nextInt();
+            int x=sc.nextInt();
+            int h=sc.nextInt();
+            int c=0;
+
+            if(n>=h){
+                c++;
+                n=n-h;
+            }
+            while(n>0){
+                n=n-x;
+                c++;
+            }
+            System.out.println(c);
+        }
+    }
+}
