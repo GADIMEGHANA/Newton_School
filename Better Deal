@@ -1,0 +1,37 @@
+Input
+The first line of input will contain a single integer T, denoting the number of test cases.
+Each test case consists of a single line of input containing two space-separated integers A and B denoting the discount provided by the first and second store respectively.
+
+Constraints
+1 ≤ T ≤ 1000
+1 ≤ A, B ≤ 100
+Output
+For each test case, output First if the first store is cheaper, Second if the second store is cheaper, and Both if both the stores are selling the product for the same price after discount.
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++){
+        int A=sc.nextInt();
+        int B=sc.nextInt();
+        int c=100-A;
+        int d=200-2*B;
+        if(c==d){
+            System.out.println("Both");
+        }
+        else if(c>d){
+            System.out.println("Second");
+        }
+        else{
+            System.out.println("First");
+        }
+        }
+    }
+}
