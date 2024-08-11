@@ -1,4 +1,4 @@
-package Newton_School;
+
 import java.util.Scanner;
 public class MakeMultipleOf3 {
     public static void main(String[] args) {

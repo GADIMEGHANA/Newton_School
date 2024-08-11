@@ -1,4 +1,4 @@
-package Newton_School;
+
 import java.util.*; // contains Collections framework
 
 // don't change the name of this class

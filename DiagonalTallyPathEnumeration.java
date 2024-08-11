@@ -1,4 +1,3 @@
-package Newton_School;
 
 import java.util.*;
 import java.math.BigInteger;
