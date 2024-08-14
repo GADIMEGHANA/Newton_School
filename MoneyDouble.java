@@ -1,16 +1,15 @@
-Input
-The first line of input will contain a single integer T, denoting the number of test cases.
-The first and only line of each test case contains 2 space-separated integers X and Y, as described in the statement.
+// Input
+// The first line of input will contain a single integer T, denoting the number of test cases.
+// The first and only line of each test case contains 2 space-separated integers X and Y, as described in the statement.
 
-Constraints
-1 ≤ T ≤ 105
-1 ≤ X ≤ 105
-1 ≤ Y ≤ 10
-Output
-For each test case, output on a new line one integer: the maximum amount of money which Chef can accumulate after Y years.
+// Constraints
+// 1 ≤ T ≤ 105
+// 1 ≤ X ≤ 105
+// 1 ≤ Y ≤ 10
+// Output
+// For each test case, output on a new line one integer: the maximum amount of money which Chef can accumulate after Y years.
   
-//program
-import java.io.*; // for handling input/output
+// program
 import java.util.*; // contains Collections framework
 
 // don't change the name of this class
@@ -35,5 +34,6 @@ class Main {
             }
             System.out.println(n);
         }
+        sc.close();
     }
 }
