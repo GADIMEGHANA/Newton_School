@@ -1,0 +1,34 @@
+def calculate_max_streak(problems_solved):
+    max_streak = 0
+    current_streak = 0
+    for problems in problems_solved:
+        if problems > 0:
+            current_streak += 1
+            max_streak = max(max_streak, current_streak)
+        else:
+            current_streak = 0
+    return max_streak
+
+def compare_streaks(orry_streak, adi_streak):
+    if orry_streak > adi_streak:
+        return "Orry"
+    elif adi_streak > orry_streak:
+        return "Adi"
+    else:
+        return "Dabur"
+
+def solve_test_case():
+    N = int(input())
+    orry_problems = list(map(int, input().split()))
+    adi_problems = list(map(int, input().split()))
+    
+    orry_max_streak = calculate_max_streak(orry_problems)
+    adi_max_streak = calculate_max_streak(adi_problems)
+    
+    return compare_streaks(orry_max_streak, adi_max_streak)
+
+# Main program
+T = int(input())
+for _ in range(T):
+    result = solve_test_case()
+    print(result)
