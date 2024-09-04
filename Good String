@@ -1,0 +1,11 @@
+def find_good_string(s):
+    stack = []
+    for char in s:
+        if stack and char.swapcase() == stack[-1]:
+            stack.pop()
+        else:
+            stack.append(char)
+    return ''.join(stack)
+s = input().strip()
+result = find_good_string(s)
+print(result)
